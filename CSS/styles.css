@@ -74,10 +74,111 @@ select {
 }
 html {
   font-family: "League Spartan", sans-serif;
+  text-align: center;
 }
 
 body {
   font-size: 15px;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.card .product-overview-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .product-overview-section .product-description {
+  padding: 1rem 0;
+}
+.card .product-overview-section .product-description h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 80%;
+  color: hsl(300deg, 43%, 22%);
+}
+.card .product-overview-section .product-description small {
+  color: hsl(303deg, 10%, 53%);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.card .product-overview-section .media-reviews .outlet-review {
+  background-color: hsl(300deg, 24%, 96%);
+  border-radius: 10px;
+  margin: 1rem;
+  width: 90%;
+  padding: 1rem;
+}
+.card .product-overview-section .media-reviews .outlet-review .star-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.card .product-overview-section .media-reviews .outlet-review p {
+  color: hsl(300deg, 43%, 22%);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.card .user-review-section {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.card .user-review-section .user-review {
+  background-color: hsl(300deg, 43%, 22%);
+  border-radius: 7px;
+  overflow: hidden;
+  padding: 2rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.card .user-review-section .user-review .review-header {
+  display: flex;
+  align-items: center;
+}
+.card .user-review-section .user-review .review-header img {
+  border-radius: 50%;
+  width: 15%;
+}
+.card .user-review-section .user-review .review-header div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.card .user-review-section .user-review .review-header div .user-name {
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 500;
+}
+.card .user-review-section .user-review .review-header div .reviewer-status {
+  color: hsl(333deg, 80%, 67%);
+  font-weight: 400;
+}
+.card .user-review-section .user-review .review-header div small {
+  font-size: 1rem;
+}
+.card .user-review-section .user-review .testimony {
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .attribution {
