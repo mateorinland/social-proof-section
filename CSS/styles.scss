@@ -1,0 +1,23 @@
+@import "_reset";
+
+$Very_Dark_Magenta: hsl(300, 43%, 22%);
+$Soft_Pink: hsl(333, 80%, 67%);
+$Dark_Grayish_Magenta: hsl(303, 10%, 53%);
+$Light_Grayish_Magenta: hsl(300, 24%, 96%);
+$White: hsl(0, 0%, 100%);
+
+html {
+    font-family: 'League Spartan', sans-serif;
+}
+
+body {
+    font-size: 15px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    a {
+        color: hsl(228, 45%, 44%);
+      }
+  }
