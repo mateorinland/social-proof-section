@@ -37,28 +37,34 @@ body {
     .product-overview-section {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: space-between; /* Why is this not working? I want to separate h1 and small */
         .product-description {
             padding: 1rem 0;
             h1 {
                 font-weight: 700;
                 font-size: 2.4rem;
-                line-height: 80%;
+                line-height: normal;
                 color: $Very_Dark_Magenta;
             }
             small {
                 color: $Dark_Grayish_Magenta;
                 font-weight: 500;
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
         }
         .media-reviews {
+            display: grid;
+            width: 100%;
+            align-content: space-around; /* Not working either */
             .outlet-review {
                 background-color: $Light_Grayish_Magenta;
                 border-radius: 10px;
-                margin: 1rem;
-                width: 90%;
+                margin: 0.5rem 0rem;
+                width: 95%;
                 padding: 1rem;
+                display: flex;
+                flex-direction: column;
                 .star-icons {
                     display: flex;
                     align-items: center;
@@ -74,8 +80,7 @@ body {
         }
     }
     .user-review-section {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         text-align: left;
         .user-review {
             background-color: $Very_Dark_Magenta;
@@ -104,7 +109,7 @@ body {
                         color: $Soft_Pink;
                         font-weight: 400;
                     }
-                    small {
+                    figcaption {
                         font-size: 1rem;
                     }
                 }
@@ -125,4 +130,54 @@ body {
     a {
         color: hsl(228, 45%, 44%);
       }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    html {
+        text-align: left;
+    }
+    body {
+        padding: 1.5rem 8rem;
+    }
+    .card {
+        .product-overview-section {
+            flex-direction: row;
+            .product-description {
+                padding: 2rem;
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+            .media-reviews {
+                grid-template-columns: repeat(11, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                padding: 2rem 4rem;
+                .outlet-review {
+                    flex-direction: row;
+                }
+                .o-review1 {
+                    grid-area: 1 / 1 / 2 / 10;
+                }
+                .o-review2 {
+                    grid-area: 2 / 2 / 3 / 11;
+                }
+                .o-review3 {
+                    grid-area: 3 / 3 / 4 / 12;
+                }
+            }
+        }
+        .user-review-section {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(15, 1fr);
+            .u-review1 {
+                grid-area: 1 / 1 / 14 / 2;
+            }
+            .u-review2 {
+                grid-area: 2 / 2 / 15 / 3;
+            }
+            .u-review3 {
+                grid-area: 3 / 3 / 16 / 4;
+            }
+        }
+    }
   }

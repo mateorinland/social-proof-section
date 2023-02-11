@@ -102,7 +102,8 @@ body {
 .card .product-overview-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between; /* Why is this not working? I want to separate h1 and small */
 }
 .card .product-overview-section .product-description {
   padding: 1rem 0;
@@ -110,20 +111,27 @@ body {
 .card .product-overview-section .product-description h1 {
   font-weight: 700;
   font-size: 2.4rem;
-  line-height: 80%;
+  line-height: normal;
   color: hsl(300deg, 43%, 22%);
 }
 .card .product-overview-section .product-description small {
   color: hsl(303deg, 10%, 53%);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+}
+.card .product-overview-section .media-reviews {
+  display: grid;
+  width: 100%;
+  align-content: space-around; /* Not working either */
 }
 .card .product-overview-section .media-reviews .outlet-review {
   background-color: hsl(300deg, 24%, 96%);
   border-radius: 10px;
-  margin: 1rem;
-  width: 90%;
+  margin: 0.5rem 0rem;
+  width: 95%;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .card .product-overview-section .media-reviews .outlet-review .star-icons {
   display: flex;
@@ -137,8 +145,7 @@ body {
   font-size: 1rem;
 }
 .card .user-review-section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   text-align: left;
 }
 .card .user-review-section .user-review {
@@ -171,7 +178,7 @@ body {
   color: hsl(333deg, 80%, 67%);
   font-weight: 400;
 }
-.card .user-review-section .user-review .review-header div small {
+.card .user-review-section .user-review .review-header div figcaption {
   font-size: 1rem;
 }
 .card .user-review-section .user-review .testimony {
@@ -187,4 +194,52 @@ body {
 }
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    text-align: left;
+  }
+  body {
+    padding: 1.5rem 8rem;
+  }
+  .card .product-overview-section {
+    flex-direction: row;
+  }
+  .card .product-overview-section .product-description {
+    padding: 2rem;
+  }
+  .card .product-overview-section .product-description h1 {
+    font-size: 3.5rem;
+  }
+  .card .product-overview-section .media-reviews {
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 2rem 4rem;
+  }
+  .card .product-overview-section .media-reviews .outlet-review {
+    flex-direction: row;
+  }
+  .card .product-overview-section .media-reviews .o-review1 {
+    grid-area: 1/1/2/10;
+  }
+  .card .product-overview-section .media-reviews .o-review2 {
+    grid-area: 2/2/3/11;
+  }
+  .card .product-overview-section .media-reviews .o-review3 {
+    grid-area: 3/3/4/12;
+  }
+  .card .user-review-section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+  }
+  .card .user-review-section .u-review1 {
+    grid-area: 1/1/14/2;
+  }
+  .card .user-review-section .u-review2 {
+    grid-area: 2/2/15/3;
+  }
+  .card .user-review-section .u-review3 {
+    grid-area: 3/3/16/4;
+  }
 }/*# sourceMappingURL=styles.css.map */
